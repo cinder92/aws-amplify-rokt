@@ -187,7 +187,7 @@ export default class PushNotification {
 
 	handleCampaignPush(rawMessage) {
 		if(!rawMessage){ return; }
-		
+
 		let message = rawMessage;
 		let campaign = null;
 		
@@ -235,7 +235,6 @@ export default class PushNotification {
 
 	handleCampaignOpened(rawMessage) {
 		logger.debug('handleCampaignOpened, raw data', rawMessage);
-
 		if(!rawMessage){ return; }
 
 		let campaign = null;
