@@ -186,8 +186,11 @@ export default class PushNotification {
 	}
 
 	handleCampaignPush(rawMessage) {
+		if(!rawMessage){ return; }
+		
 		let message = rawMessage;
 		let campaign = null;
+		
 		if (Platform.OS === 'ios') {
 			message = this.parseMessageFromIOS(rawMessage);
 			campaign =
@@ -232,6 +235,9 @@ export default class PushNotification {
 
 	handleCampaignOpened(rawMessage) {
 		logger.debug('handleCampaignOpened, raw data', rawMessage);
+
+		if(!rawMessage){ return; }
+
 		let campaign = null;
 		if (Platform.OS === 'ios') {
 			const message = this.parseMessageFromIOS(rawMessage);
